@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # SistemaMangas
-=======
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
@@ -58,4 +57,3 @@ $ npm i --save @nestjs/typeorm typeorm
 ```bash
  npm i --save class-validator class-transformer
  ```
->>>>>>> develop
