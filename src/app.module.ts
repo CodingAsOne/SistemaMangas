@@ -3,9 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { FavoriteService } from './favorite/favorite.service';
+import { FavoriteController } from './favorite/favorite.controller';
+import { FavoriteModule } from './favorite/favorite.module';
 
 @Module({
-  imports: [
+  imports: [AuthModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -16,9 +19,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    AuthModule,
+    FavoriteModule,
+    
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, FavoriteController],
+  providers: [AppService, FavoriteService]
 })
 export class AppModule {}
