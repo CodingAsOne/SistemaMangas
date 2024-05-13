@@ -46,3 +46,20 @@ $ npm i --save @nestjs/typeorm typeorm
 ```bash
  npm i --save class-validator class-transformer
  ```
+
+[Bcrypt](https://www.npmjs.com/package/bcrypt) para encriptar as senhas:
+```shell
+npm i bcrypt  # Instalar
+npm i -D @types/bcrypt  # Salvar no projeto
+```
+
+[JWT](https://github.com/nestjs/jwt) para criar tokens usados para autenticação/autorização
+```shell
+npm i --save @nestjs/jwt
+```
+
+[CookieParser](https://github.com/expressjs/cookie-parser) para trabalhar com cookie no navegador do usuário
+```shell
+npm i cookie-parser # Instalar
+npm i -D @types/cookie-parser # Salvar no projeto
+```
