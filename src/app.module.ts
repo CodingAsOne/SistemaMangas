@@ -6,6 +6,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { FavoriteService } from './favorite/favorite.service';
 import { FavoriteController } from './favorite/favorite.controller';
 import { FavoriteModule } from './favorite/favorite.module';
+import { MangaController } from './manga/manga.controller';
+import { MangaService } from './manga/manga.service';
+import { MangaModule } from './manga/manga.module';
 
 @Module({
   imports: [AuthModule,
@@ -20,9 +23,10 @@ import { FavoriteModule } from './favorite/favorite.module';
       synchronize: true,
     }),
     FavoriteModule,
+    MangaModule,
     
   ],
-  controllers: [AppController, FavoriteController],
-  providers: [AppService, FavoriteService]
+  controllers: [AppController, FavoriteController, MangaController],
+  providers: [AppService, FavoriteService, MangaService]
 })
 export class AppModule {}
