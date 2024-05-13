@@ -42,7 +42,7 @@ export class AuthController {
 
         const jwt = await this.jwtService.signAsync({ id: user.id });
 
-        response.cookie('jwtAuth', jwt, { httpOnly: true });
+        response.cookie('jwt', jwt, { httpOnly: true });
 
         return user;
     }
