@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { MangaEntity } from '../models/manga.entity'; // Importa a entidade Manga
+import { MangaEntity } from '../models/manga.entity'; 
 
 @Entity()
 export class ChapterEntity {
