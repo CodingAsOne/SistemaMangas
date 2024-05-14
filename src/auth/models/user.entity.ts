@@ -9,10 +9,13 @@ export class UserEntity {
     @Column()
     name: string;
 
-    @Column({unique: true})
+    @Column({ unique: true })
     email: string;
 
     @Column()
     @Exclude()
     password: string;
+
+    @Column('simple-array', { nullable: true })
+    favorites: number[];
 }
