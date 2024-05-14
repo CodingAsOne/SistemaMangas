@@ -3,15 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { FavoriteService } from './favorite/favorite.service';
-import { FavoriteController } from './favorite/favorite.controller';
-import { FavoriteModule } from './favorite/favorite.module';
-import { MangaController } from './manga/manga.controller';
-import { MangaService } from './manga/manga.service';
 import { MangaModule } from './manga/manga.module';
+import { MangaEntity } from './manga/models/manga.entity';
+import { ChapterEntity } from './manga/chapter/chapter.entity';
 
 @Module({
-  imports: [AuthModule,
+  imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -21,12 +18,12 @@ import { MangaModule } from './manga/manga.module';
       database: 'sistema_manga',
       autoLoadEntities: true,
       synchronize: true,
+      entities: [MangaEntity, ChapterEntity,]
     }),
-    FavoriteModule,
+    AuthModule,
     MangaModule,
-    
   ],
-  controllers: [AppController, FavoriteController, MangaController],
-  providers: [AppService, FavoriteService, MangaService]
+  controllers: [AppController],
+  providers: [AppService]
 })
-export class AppModule {}
+export class AppModule { }
